@@ -20,8 +20,8 @@ Test Case 04: Open My Account
   Click My Account
 
 Test Case 05: Create New Keywords
-  Click Button New Key
-  # Type Key Name
+  Click Button Create New Key
+  Type Key Name
   # Type Description
   # Type IP ADDRESSES
   # Click Button Create Key

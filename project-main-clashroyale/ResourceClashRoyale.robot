@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  RequestsLibrary
 
 *** Variables ***
 ${URL}                 https://developer.clashroyale.com/
@@ -10,7 +11,10 @@ ${INPUT_USERNAME}      xpath=//*[@id="email"]
 ${INPUT_PASSWORD}      xpath=//*[@id="password"]
 ${BUTTON_LOGIN}        xpath=//*[@class="ladda-button btn btn-primary btn-lg"]
 ${BUTTON_MY_USER}      xpath=//*[@id="content"]/div/div[2]/div/header/div/div/div[3]/div/div/button
-${BUTTON_MY_ACCOUNT}   xpath=//ul[@class="dropdown-menu"]/li/a[@href="#/account"]  
+${BUTTON_MY_ACCOUNT}   xpath=//ul[@class="dropdown-menu"]/li/a[@href="#/account"]
+${BUTTON_NEW_KEY}      xpath=//a[@href="#/new-key"]
+${INPUT_NAME}          xpath=//*[@id="name"]
+# ${URL_TESTE}             
 
 *** Keywords ***
 Go to clashroyale page
@@ -19,9 +23,11 @@ Go to clashroyale page
   Maximize Browser Window
 
 Click Button Cookies
+  Wait Until Element Is Visible  ${COOKIES}
   Click Link     ${COOKIES}
 
 Click login
+  Wait Until Element Is Visible  ${LINK_LOGIN}
   Click Link     ${LINK_LOGIN}
 
 Login Email User with "${EMAIL}"
@@ -33,6 +39,7 @@ Password User user with "${PASSWORD}"
   Input Text     ${INPUT_PASSWORD}  ${PASSWORD}
 
 Click Button Login
+  Wait Until Element Is Visible  ${BUTTON_LOGIN}  
   Click Button                   ${BUTTON_LOGIN}
 
 Click My User
@@ -41,6 +48,19 @@ Click My User
 
 Click My Account
   Click Link                     ${BUTTON_MY_ACCOUNT}
+
+Click Button Create New Key      
+  Click Link                     ${BUTTON_NEW_KEY}
+
+Type Key Name
+  Click Element  ${INPUT_NAME}
+  Create Session  server  https://api.ipify.org/ 
+  
+  ${response}=  GET On Session  server   url=https://api.ipify.org/
+  ${var_dict}=    Evaluate     $response.content 
+  ${converte}=  Convert To String  ${var_dict} 
+  Input Text     ${INPUT_NAME}  ${converte}
+
 
 
 
