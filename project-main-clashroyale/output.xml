@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.6.5 on win32)" generated="20210906 02:07:13.201" rpa="false" schemaversion="2">
+<suite id="s1" name="ClashRoyale" source="C:\Users\Alisson Gustavo\Documents\project-clashroyale-primecontrol\project-main-clashroyale\ClashRoyale.robot">
+<test id="s1-t1" name="Test Case 01: Open Page">
+<kw name="Go to clashroyale page" library="ResourceClashRoyale">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210906 02:07:13.420" level="INFO">Opening browser 'chrome' to base url 'https://developer.clashroyale.com/'.</msg>
+<status status="PASS" starttime="20210906 02:07:13.419" endtime="20210906 02:07:16.936"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Clash Royale API</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210906 02:07:16.940" level="INFO">Page title is 'Clash Royale API'.</msg>
+<status status="PASS" starttime="20210906 02:07:16.936" endtime="20210906 02:07:16.940"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210906 02:07:16.940" endtime="20210906 02:07:17.052"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:13.418" endtime="20210906 02:07:17.053"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:13.417" endtime="20210906 02:07:17.053"/>
+</test>
+<test id="s1-t2" name="Teste Case 02: Exit Cookies">
+<kw name="Click Button Cookies" library="ResourceClashRoyale">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.057" level="INFO">Clicking link 'xpath=//a[@class="cc-btn cc-dismiss"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.056" endtime="20210906 02:07:17.119"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.055" endtime="20210906 02:07:17.120"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.054" endtime="20210906 02:07:17.120"/>
+</test>
+<test id="s1-t3" name="Test Case 03: Login">
+<kw name="Click login" library="ResourceClashRoyale">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_LOGIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.124" level="INFO">Clicking link 'xpath=//div[@class="hidden-xs hidden-sm col-md-4"]/div/a[2]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.123" endtime="20210906 02:07:17.247"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.122" endtime="20210906 02:07:17.247"/>
+</kw>
+<kw name="Login Email User with &quot;gustavoalisson112@gmail.com&quot;" library="ResourceClashRoyale" sourcename="Login Email User with &quot;${EMAIL}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${INPUT_USERNAME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.249" level="INFO">Clicking element 'xpath=//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.249" endtime="20210906 02:07:17.339"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_USERNAME}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.340" level="INFO">Typing text 'gustavoalisson112@gmail.com' into text field 'xpath=//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.339" endtime="20210906 02:07:17.474"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.248" endtime="20210906 02:07:17.474"/>
+</kw>
+<kw name="Password User user with &quot;Guga2019@&quot;" library="ResourceClashRoyale" sourcename="Password User user with &quot;${PASSWORD}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${INPUT_PASSWORD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.475" level="INFO">Clicking element 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.475" endtime="20210906 02:07:17.517"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.518" level="INFO">Typing text 'Guga2019@' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.517" endtime="20210906 02:07:17.575"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.474" endtime="20210906 02:07:17.575"/>
+</kw>
+<kw name="Click Button Login" library="ResourceClashRoyale">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:17.576" level="INFO">Clicking button 'xpath=//*[@class="ladda-button btn btn-primary btn-lg"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:17.576" endtime="20210906 02:07:17.630"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.575" endtime="20210906 02:07:17.630"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.121" endtime="20210906 02:07:17.631"/>
+</test>
+<test id="s1-t4" name="Test Case 04: Create New Key">
+<kw name="Click My User" library="ResourceClashRoyale">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BUTTON_MY_USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210906 02:07:17.633" endtime="20210906 02:07:18.693"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_MY_USER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:18.694" level="INFO">Clicking button 'xpath=//*[@id="content"]/div/div[2]/div/header/div/div/div[3]/div/div/button'.</msg>
+<status status="PASS" starttime="20210906 02:07:18.693" endtime="20210906 02:07:18.743"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.633" endtime="20210906 02:07:18.743"/>
+</kw>
+<kw name="Click My Account" library="ResourceClashRoyale">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${BUTTON_MY_ACCOUNT}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210906 02:07:18.745" level="INFO">Clicking link 'xpath=//ul[@class="dropdown-menu"]/li/a[@href="#/account"]'.</msg>
+<status status="PASS" starttime="20210906 02:07:18.744" endtime="20210906 02:07:18.810"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:18.744" endtime="20210906 02:07:18.811"/>
+</kw>
+<status status="PASS" starttime="20210906 02:07:17.632" endtime="20210906 02:07:18.811"/>
+</test>
+<status status="PASS" starttime="20210906 02:07:13.202" endtime="20210906 02:07:18.814"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="ClashRoyale">ClashRoyale</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
