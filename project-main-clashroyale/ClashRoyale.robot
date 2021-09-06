@@ -21,8 +21,8 @@ Test Case 04: Open My Account
 
 Test Case 05: Create New Keywords
   Click Button Create New Key
-  Type Key Name
-  # Type Description
-  # Type IP ADDRESSES
-  # Click Button Create Key
+  Type Key Name with "Permission"
+  Type Description with "Testing API ClashRoyale for prime Control project"
+  Type IP Addresses and test external dynamic ip
+  Click Button Create Key
 
