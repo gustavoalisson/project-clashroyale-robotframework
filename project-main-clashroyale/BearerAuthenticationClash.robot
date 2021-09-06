@@ -11,6 +11,7 @@ Library  String
 BearerAuthTest
   Connect with authentication in API ClashRoyale
   Request Data The Resistance
+  Request Members Of Clam
 
 *** Keywords ***
 Connect with authentication in API ClashRoyale
