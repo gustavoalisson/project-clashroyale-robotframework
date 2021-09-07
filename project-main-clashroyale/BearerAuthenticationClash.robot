@@ -24,12 +24,16 @@ Request Data The Resistance
    ${ENDPOINT}   Set Variable   /clans?name=The%20Resistance
    ${RESPONSE} =   GET On Session   session    ${ENDPOINT}     headers=${BEARER_TOKEN}
    Log  ${RESPONSE}
-   ${VAR_DICT}=    Evaluate     json.loads("""${response.content}""")    json
-   ${VAR_TAG}=    Set Variable    ${VAR_DICT}[items][0]
-   Log     ${VAR_TAG}   
-
-
-
+   ${DATA}=    Evaluate     json.loads("""${response.text}""")    json
+  FOR  ${I}   IN   @{DATA}[items]
+       IF  "${I}[name]"=="The resistance"
+           IF   "#9V2Y"=="${I}[tag]"
+             Log     ${recebe} =  Set Variable  ${I}[tag]
+           END   
+       END   
+  END   
+      
+ 
 Request Members Of Clan
    ${ENDPOINT}   Set Variable   /clans/%239V2YV8YJ/members
    ${RESPONSE} =   GET On Session   session    ${ENDPOINT}     headers=${BEARER_TOKEN}
