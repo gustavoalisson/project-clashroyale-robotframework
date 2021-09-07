@@ -5,6 +5,7 @@ Library  String
 
 
 *** Variable ***
+                                       # INSERT SESSION >
 &{BEARER_TOKEN}   Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjlhNGM1ZjVmLTJkYzUtNDc4Mi1hNzdlLTgwZWJlMWYxMGMzZiIsImlhdCI6MTYzMDk2MDQ0Mywic3ViIjoiZGV2ZWxvcGVyL2QxZDI5YjJlLTI1NzEtNDZkOS1hMjQzLTA2MTU1ZGE5MjcyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIyMDEuMTgyLjE3NC4xMjMiXSwidHlwZSI6ImNsaWVudCJ9XX0.1CipTJy-FnD04pWcpr56Pdt6J7h5mkogmgzGU4aZmHizVMDaSDDW6tLxWaR30kKyGx2LCHGjVrv76FlqQotz_A
 ${URL_BASE}       https://api.clashroyale.com/v1
 
@@ -27,13 +28,17 @@ Request Data The Resistance
    ${VAR_TAG}=    Set Variable    ${VAR_DICT}[items][0]
    Log     ${VAR_TAG}   
 
+
+
 Request Members Of Clan
    ${ENDPOINT}   Set Variable   /clans/%239V2YV8YJ/members
    ${RESPONSE} =   GET On Session   session    ${ENDPOINT}     headers=${BEARER_TOKEN}
    Log  ${RESPONSE}
-   ${VAR_DICT}=    Evaluate     json.loads("""${response.content}""")    json
+   ${VAR_DICT}=    Evaluate     json.loads("""${response.text}""")    json
+   ${value}=    Set variable    ${VAR_DICT}[items][0][tag]
 
-   
+
+    
    
 
 
