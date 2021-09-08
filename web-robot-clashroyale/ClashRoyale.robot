@@ -11,8 +11,8 @@ Teste Case 02: Exit Cookies
 
 Test Case 03: Login
   Click login
-  Login Email User with "gustavoalisson112@gmail.com"  #INSERT EMAIL HERE!
-  Password User user with "Guga2019@"  #INSER PASSWORD HERE! 
+  Login Email User with "robot2021automation@gmail.com"  #INSERT EMAIL HERE!
+  Password User user with "Robot@2021"  #INSERT PASSWORD HERE! 
   Click Button Login
 
 Test Case 04: Open My Account
