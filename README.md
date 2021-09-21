@@ -1,4 +1,4 @@
-<h1 align="center">Desafio - Clash Royale :crown: (Prime Robot) :robot:</h1>
+<h1 align="center">Desafio - Clash Royale :crown: 
 
 ## :pushpin: Objetivo do projeto 
 
